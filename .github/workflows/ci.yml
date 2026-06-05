@@ -1,0 +1,55 @@
+name: CI — LeatherLoop (Node.js)
+
+# ── TRIGGER ──────────────────────────────────────────────────────────────────
+# Se dispara en push a main y develop, y en PRs hacia main.
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main"]
+
+# ── JOBS ─────────────────────────────────────────────────────────────────────
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    # Matrix strategy: ejecuta el mismo job con Node.js 18 y 20 simultáneamente.
+    strategy:
+      matrix:
+        node-version: [18, 20]
+
+    steps:
+      # PASO 1: Descarga el código del repositorio dentro de la VM
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # PASO 2: Instala la versión de Node.js indicada en la matrix
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      # PASO 3: Instala dependencias de forma determinista
+      - name: Instalar dependencias
+        run: npm ci
+
+      # PASO 4: Análisis estático con ESLint
+      - name: Linting
+        run: npm run lint
+
+      # PASO 5: Pruebas unitarias con Jest
+      - name: Pruebas unitarias
+        run: npm test
+
+      # PASO 6: Build de producción de Next.js
+      - name: Build de producción
+        run: npm run build
+
+      # PASO 7: Sube el artefacto del build (.next/) como evidencia descargable
+      - name: Subir artefacto del build
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-build-node${{ matrix.node-version }}
+          path: .next/
+          retention-days: 7
