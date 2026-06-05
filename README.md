@@ -1,6 +1,6 @@
 # LeatherLoop
 
-![CI Status](https://github.com/NotJcao17/LeatherLoop/actions/workflows/ci.yml/badge.svg?branch=main)
+![CI Status](https://github.com/NotJcao17/LeatherLoop/actions/workflows/ci.yml/badge.svg?branch=develop)
 
 Plataforma de economía circular que digitaliza y revaloriza los residuos de corte (mermas) generados por la industria del calzado en León, Guanajuato. Artesanos y emprendedores acceden a materia prima a través de un sistema de reserva garantizada.
 
