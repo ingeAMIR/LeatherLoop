@@ -16,7 +16,7 @@ jobs:
     # Matrix strategy: ejecuta el mismo job con Node.js 18 y 20 simultáneamente.
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [20, 22]
 
     steps:
       # PASO 1: Descarga el código del repositorio dentro de la VM
