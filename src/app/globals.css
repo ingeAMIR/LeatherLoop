@@ -1,13 +1,66 @@
+/* Tokens de diseño (--ll-*) y estilos globales. Reflejan src/styles/theme.ts. */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --ll-bg: #f3f8ef;
+  --ll-surface: #ffffff;
+  --ll-surface-alt: #e7f1e1;
+
+  --ll-text: #16210f;
+  --ll-text-muted: #4a5a40;
+  --ll-text-inverse: #ffffff;
+
+  --ll-brand: #5ba84e;
+  --ll-primary: #2e7d32;
+  --ll-primary-strong: #1e5d24;
+  --ll-primary-contrast: #ffffff;
+
+  --ll-border: #cadbc0;
+
+  --ll-disponible-bg: #2e7d32;
+  --ll-disponible-text: #ffffff;
+  --ll-reservado-bg: #5b6557;
+  --ll-reservado-text: #ffffff;
+
+  /* Éxito (CA-1) */
+  --ll-exito-bg: #e6f4e6;
+  --ll-exito-border: #2e7d32;
+  --ll-exito-text: #14491a;
+
+  /* Conflicto (CA-2) */
+  --ll-conflicto-bg: #fbe9e7;
+  --ll-conflicto-border: #8a1c12;
+  --ll-conflicto-text: #5a0f09;
+
+  --ll-focus: #1a56db;
+
+  /* CA-3: objetivo táctil mínimo */
+  --ll-touch-min: 48px;
+
+  --ll-space-xs: 4px;
+  --ll-space-sm: 8px;
+  --ll-space-md: 16px;
+  --ll-space-lg: 24px;
+  --ll-space-xl: 32px;
+
+  /* Radios */
+  --ll-radius-sm: 8px;
+  --ll-radius-md: 12px;
+  --ll-radius-lg: 16px;
+
+  /* Tipografía */
+  --ll-font-sm: 0.95rem;
+  --ll-font-base: 1.0625rem;
+  --ll-font-lg: 1.25rem;
+  --ll-font-xl: 1.5rem;
+  --ll-font-xxl: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -22,19 +75,13 @@ body {
 
 body {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ll-text);
+  background: var(--ll-bg);
+  font-family: var(--font-geist-sans), system-ui, Arial, Helvetica, sans-serif;
+  font-size: var(--ll-font-base);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -42,8 +89,16 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Foco visible y consistente en toda la app (accesibilidad por teclado). */
+:focus-visible {
+  outline: 3px solid var(--ll-focus);
+  outline-offset: 2px;
+}
+
+/* Respeta a quien reduce el movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

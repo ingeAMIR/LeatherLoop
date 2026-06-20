@@ -1,0 +1,23 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: var(--ll-space-xs) var(--ll-space-md);
+  background: var(--ll-surface);
+  border-bottom: 2px solid var(--ll-border);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ll-touch-min);
+  padding: var(--ll-space-xs) var(--ll-space-sm);
+  border-radius: var(--ll-radius-sm);
+}
+
+.logo {
+  height: 56px;
+  width: auto;
+}
