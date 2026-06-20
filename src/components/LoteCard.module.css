@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ll-space-md);
+  /* Objetivo táctil amplio: toda la tarjeta es accionable (CA-3). */
+  min-height: var(--ll-touch-min);
+  padding: var(--ll-space-lg);
+  background: var(--ll-surface);
+  border: 2px solid var(--ll-border);
+  border-radius: var(--ll-radius-lg);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--ll-primary);
+  transform: translateY(-2px);
+}
+
+.encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ll-space-md);
+}
+
+.material {
+  font-size: var(--ll-font-lg);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ll-text);
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ll-space-md) var(--ll-space-xl);
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.etiqueta {
+  font-size: var(--ll-font-sm);
+  color: var(--ll-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.valor {
+  font-size: var(--ll-font-base);
+  font-weight: 600;
+  color: var(--ll-text);
+}
+
+.cta {
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--ll-primary-strong);
+}

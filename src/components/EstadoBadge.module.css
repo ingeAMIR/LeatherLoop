@@ -1,0 +1,29 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ll-space-sm);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: var(--ll-font-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+.disponible {
+  background: var(--ll-disponible-bg);
+  color: var(--ll-disponible-text);
+}
+
+.reservado {
+  background: var(--ll-reservado-bg);
+  color: var(--ll-reservado-text);
+}

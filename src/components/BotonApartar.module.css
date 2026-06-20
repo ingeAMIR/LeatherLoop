@@ -1,0 +1,47 @@
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ll-space-sm);
+  width: 100%;
+  /* CA-3: objetivo táctil ≥ 48×48px. */
+  min-height: 56px;
+  min-width: var(--ll-touch-min);
+  padding: var(--ll-space-md) var(--ll-space-lg);
+  background: var(--ll-primary);
+  color: var(--ll-primary-contrast);
+  border: none;
+  border-radius: var(--ll-radius-md);
+  font-size: var(--ll-font-lg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.boton:hover:not(:disabled) {
+  background: var(--ll-primary-strong);
+}
+
+.boton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.boton:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: girar 0.7s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
