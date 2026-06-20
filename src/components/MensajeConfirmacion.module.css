@@ -1,0 +1,65 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ll-space-md);
+  padding: var(--ll-space-lg);
+  background: var(--ll-exito-bg);
+  border: 2px solid var(--ll-exito-border);
+  border-radius: var(--ll-radius-md);
+  color: var(--ll-exito-text);
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: var(--ll-space-md);
+}
+
+.icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ll-exito-border);
+  color: var(--ll-text-inverse);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.mensaje {
+  font-size: var(--ll-font-lg);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.temporizador {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ll-space-xs);
+  align-items: center;
+  padding: var(--ll-space-md);
+  background: var(--ll-surface);
+  border-radius: var(--ll-radius-sm);
+}
+
+.temporizadorEtiqueta {
+  font-size: var(--ll-font-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cuenta {
+  font-size: 2.75rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.expirado {
+  font-size: var(--ll-font-base);
+  font-weight: 600;
+}
